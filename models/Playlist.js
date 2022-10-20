@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const Playlist = new Schema(
+const playlistSchema = new Schema(
   {
     creatorName: { type: String, required: true },
     playlistName: { type: String, reqired: true },
@@ -12,4 +12,4 @@ const Playlist = new Schema(
   { timestamps: true }
 )
 
-module.exports = mongoose.model('Playlist', Playlist)
+module.exports = playlistSchema
