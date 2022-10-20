@@ -4,7 +4,7 @@
 
 ### By: Julia Lima
 
-#### [Github](https://github.com/julialima08) | [Linkedin](https://www.linkedin.com/in/julia-lima-279697249/) | [Trello](https://trello.com/invite/b/5XKISBjT/ATTI2f137c8622096e6cc1741a2056984628C2184104/digital-record-player)
+#### [Github](https://github.com/julialima08) | [Linkedin](https://www.linkedin.com/in/julia-lima-279697249/) | [Trello](https://trello.com/invite/b/5XKISBjT/ATTI2f137c8622096e6cc1741a2056984628C2184104/digital-record-player) | [Official Cite](blah)
 
 ---
 
@@ -20,7 +20,6 @@
 
 ![Tech](https://camo.githubusercontent.com/2fd16dd0b0d63836d2f1bcc5233ff57d97b4238bc48ab1d713b3d058a1135931/68747470733a2f2f6765656b73706572686f75722e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031392f30322f6d65726e2d696d672e706e67253232)
 
-- HTML
 - CSS
 - Javascript
 - React
