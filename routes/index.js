@@ -8,9 +8,10 @@ router.get('/genres/:id', controllers.getGenres)
 router.post('/playlists', controllers.createPlaylist)
 router.get('/playlists', controllers.getAllPlaylists)
 router.get('/playlists/:id', controllers.getOnePlaylist)
-router.put('playlists/:id', controllers.updatePlaylist)
+router.put('/playlists/:id', controllers.updatePlaylist)
 router.delete('/playlist/:id', controllers.deletePlaylist)
-router.delete('/playlists/:id/song/:id', controllers.deleteSongInPlaylist)
 router.post('/addSong', controllers.addSongs)
+router.put('/addSong/:playlistId', controllers.addSongToPlaylist)
+router.put('/removeSong/:playlistId', controllers.removeSongFromPlaylist)
 
 module.exports = router

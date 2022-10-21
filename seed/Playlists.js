@@ -8,36 +8,36 @@ const mainPlaylists = async () => {
     {
       creatorName: 'Jonny',
       playlistName: 'Summer jams',
-      numOfSongs: 5,
-      length: '30.05',
+      numOfSongs: 0,
+      length: 0,
       songs: []
     },
     {
       creatorName: 'Olivia',
       playlistName: 'Best songs ever!',
-      numOfSongs: 5,
-      length: '20.10',
+      numOfSongs: 0,
+      length: 0,
       songs: []
     },
     {
       creatorName: 'Nick',
       playlistName: 'Indie playlist',
-      numOfSongs: 5,
-      length: '15.00',
+      numOfSongs: 0,
+      length: 0,
       songs: []
     },
     {
       creatorName: 'Carol',
       playlistName: 'Carols cool playlist',
-      numOfSongs: 5,
-      length: '46.03',
+      numOfSongs: 0,
+      length: 0,
       songs: []
     },
     {
       creatorName: 'Bianca',
       playlistName: 'Songs on repeat',
-      numOfSongs: 5,
-      length: '30.40',
+      numOfSongs: 0,
+      length: 0,
       songs: []
     }
   ]

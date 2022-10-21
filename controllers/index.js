@@ -1,5 +1,5 @@
-const Playlist = require('../models/Playlist')
-const Song = requre('../models/Song')
+const { Playlist } = require('../models')
+const { Song } = require('../models')
 
 const getAllSongs = async (req, res) => {
   try {
@@ -33,7 +33,7 @@ const addSongs = async (req, res) => {
 const getGenres = async (req, res) => {
   try {
     const { id } = req.params
-    const genre = await Song.genre.findById(id)
+    const genre = await Song.find({ genre: id })
     return res.status(200).json({ genre })
   } catch (error) {
     return res.status(500).send(error.message)
@@ -62,8 +62,8 @@ const getAllPlaylists = async (req, res) => {
 const getOnePlaylist = async (req, res) => {
   try {
     const { id } = req.params
-    const playlist = await Playlist.findById(id)
-    return res.status(200).json({ playlist })
+    const playlist = await Playlist.findById(id).populate('songs')
+    return res.status(200).json(playlist)
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -93,11 +93,39 @@ const deletePlaylist = async (req, res) => {
   }
 }
 
-const deleteSongInPlaylist = async (req, res) => {
+const addSongToPlaylist = async (req, res) => {
   try {
-    const { id } = req.params
-    const playlist = await Playlist.songs.findByIndexAndDelete(id)
-    return res.status(200).json({ playlist })
+    const { playlistId } = req.params
+    const playlist = await Playlist.findById(playlistId)
+    const song = req.body
+
+    playlist.numOfSongs += 1
+    playlist.length += song.length
+    playlist.songs.push(song._id)
+    playlist.save()
+    if (playlist) {
+      return res.status(200).send(playlist)
+    }
+    throw new Error('playlist not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const removeSongFromPlaylist = async (req, res) => {
+  try {
+    const { playlistId } = req.params
+    const playlist = await Playlist.findById(playlistId)
+    const song = req.body
+
+    playlist.numOfSongs -= 1
+    playlist.length -= song.length
+    playlist.songs.splice(song.index, 1)
+    playlist.save()
+    if (playlist) {
+      return res.status(200).send(playlist)
+    }
+    throw new Error('playlist not found')
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -113,5 +141,6 @@ module.exports = {
   getOnePlaylist,
   updatePlaylist,
   deletePlaylist,
-  deleteSongInPlaylist
+  addSongToPlaylist,
+  removeSongFromPlaylist
 }
