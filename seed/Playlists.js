@@ -1,43 +1,43 @@
 const db = require('../db')
-const Playlist = require('../models/Playlist')
+const { Playlist } = require('../models')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const mainPlaylists = async () => {
   const playlists = [
     {
-      creatorName: '',
-      playlistName: '',
+      creatorName: 'Jonny',
+      playlistName: 'Summer jams',
       numOfSongs: 5,
-      length: '',
+      length: '30.05',
       songs: []
     },
     {
-      creatorName: '',
-      playlistName: '',
+      creatorName: 'Olivia',
+      playlistName: 'Best songs ever!',
       numOfSongs: 5,
-      length: '',
+      length: '20.10',
       songs: []
     },
     {
-      creatorName: '',
-      playlistName: '',
+      creatorName: 'Nick',
+      playlistName: 'Indie playlist',
       numOfSongs: 5,
-      length: '',
+      length: '15.00',
       songs: []
     },
     {
-      creatorName: '',
-      playlistName: '',
+      creatorName: 'Carol',
+      playlistName: 'Carols cool playlist',
       numOfSongs: 5,
-      length: '',
+      length: '46.03',
       songs: []
     },
     {
-      creatorName: '',
-      playlistName: '',
+      creatorName: 'Bianca',
+      playlistName: 'Songs on repeat',
       numOfSongs: 5,
-      length: '',
+      length: '30.40',
       songs: []
     }
   ]
