@@ -7,6 +7,7 @@ const Header = () => {
 
   return (
     <header>
+      <img src="https://ucarecdn.com/f738b9e2-61c3-4e71-b533-bee8cb880474/" />
       <Title title={title} />
       <Nav />
     </header>
