@@ -1,6 +1,8 @@
 import PlaylistCard from '../Components/PlaylistCard'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import CreatePlaylistPopUp from '../Components/CreatePlaylistPopUp'
 
 const Playlists = () => {
   const [playlists, setPlaylists] = useState([])
@@ -14,10 +16,39 @@ const Playlists = () => {
     getPlaylists()
   }, [])
 
+  let navigate = useNavigate()
+
+  const getOnePlaylist = (playlist) => {
+    navigate(`/playlist/${playlist._id}`)
+  }
+  const [newPlaylist, setNewPlaylist] = useState({
+    playlistName: '',
+    creatorName: '',
+    numOfSongs: 0,
+    length: 0
+  })
+
+  const addPlaylist = async (e) => {
+    // e.preventDefault()
+    let response = await axios.post(
+      'http://localhost:3001/playlists',
+      newPlaylist
+    )
+    setNewPlaylist(response)
+  }
+
+  const handleChange = (e) => {
+    setNewPlaylist({ ...newPlaylist, [e.target.name]: e.target.value })
+  }
+
   return (
     <div>
       <h1>Playlists</h1>
-      <button>Create Playlist</button>
+      <CreatePlaylistPopUp
+        newPlaylist={newPlaylist}
+        handleChange={handleChange}
+        addPlaylist={addPlaylist}
+      />
       <div>
         {playlists.map((playlist) => (
           <PlaylistCard
@@ -26,6 +57,7 @@ const Playlists = () => {
             creatorName={playlist.creatorName}
             numOfSongs={playlist.numOfSongs}
             length={playlist.length}
+            onClick={() => getOnePlaylist(playlist)}
           />
         ))}
       </div>
