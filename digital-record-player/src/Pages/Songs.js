@@ -10,9 +10,9 @@ const Songs = () => {
     setSongs(response.data.songs)
   }
 
-  // useEffect(() => {
-  //   getSongs()
-  // })
+  useEffect(() => {
+    getSongs()
+  }, [])
 
   return (
     <div>

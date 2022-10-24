@@ -12,11 +12,12 @@ const Playlists = () => {
 
   useEffect(() => {
     getPlaylists()
-  })
+  }, [])
 
   return (
     <div>
       <h1>Playlists</h1>
+      <button>Create Playlist</button>
       <div>
         {playlists.map((playlist) => (
           <PlaylistCard
