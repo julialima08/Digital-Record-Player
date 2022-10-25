@@ -1,13 +1,13 @@
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import SongCard from './SongCard'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import RemoveSongFromPlaylist from './RemoveSongFromPlaylist'
 
 const PlaylistCard = (props) => {
-  let { id } = useParams
-  const removeSongFromPlaylist = async () => {
-    await axios.put(`http://localhost:3001/removeSong/${id}`)
-  }
+  const [song, setSong] = useState()
+  const [playlists, setPlaylists] = useState()
+  let { id } = useParams()
 
   const getPlaylistDetails = async () => {
     let response = await axios.get(`http://localhost:3001/playlists/${id}`)
@@ -18,29 +18,35 @@ const PlaylistCard = (props) => {
     getPlaylistDetails()
   }, [])
 
+  let navigate = useNavigate()
+
+  const handleDelete = async () => {
+    await axios.delete(`http://localhost:3001/playlist/${id}`)
+    navigate('/playlists')
+  }
+
   return (
-    <div class="playlist-card" onClick={props.onClick}>
-      <div class="playlist-img">
-        <img src="" alt="" />
-      </div>
-      <div class="playlist-info">
+    <div className="playlist-card" onClick={props.onClick}>
+      <div className="playlist-img">{/* <img src="" alt="" /> */}</div>
+      <div className="playlist-info">
         <h3>{props.playlistName}</h3>
         <h4>Created by: {props.creatorName}</h4>
         <h5>{props.numOfSongs} Songs</h5>
         <h5>{props.length} mins</h5>
+        <button onClick={handleDelete}>Delete Playlist</button>
+        <button>Edit Playlist</button>
         {props.songs &&
           props.songs.map((song) => (
             <div>
               <SongCard
                 key={song._id}
+                id={song._id}
                 title={song.title}
                 artist={song.artist}
                 genre={song.genre}
                 length={song.length}
               />
-              <button onClick={removeSongFromPlaylist}>
-                Delete from playlist
-              </button>
+              <RemoveSongFromPlaylist song={props} />
             </div>
           ))}
       </div>

@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
+import '../CSS/nav.css'
 
 const Nav = () => {
   return (
-    <div>
+    <div className="nav">
       <Link to="/">
         <button>Home</button>
       </Link>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../App.css'
+import '../CSS/App.css'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import PlaylistCard from './PlaylistCard'

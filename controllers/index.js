@@ -98,7 +98,7 @@ const addSongToPlaylist = async (req, res) => {
     const { playlistId } = req.params
     const playlist = await Playlist.findById(playlistId)
     const song = req.body
-    console.log(req.body)
+
     playlist.numOfSongs += 1
     playlist.length += song.length
     playlist.songs.push(song.id)
@@ -117,7 +117,7 @@ const removeSongFromPlaylist = async (req, res) => {
     const { playlistId } = req.params
     const playlist = await Playlist.findById(playlistId)
     const song = req.body
-
+    console.log(req.body)
     playlist.numOfSongs -= 1
     playlist.length -= song.length
     playlist.songs.splice(song.index, 1)

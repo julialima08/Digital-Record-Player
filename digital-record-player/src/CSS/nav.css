@@ -1,0 +1,15 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #2a611e;
+ padding-top: 10px;
+ padding-bottom: 10px;
+  width: 100vw;
+}
+
+.nav button {
+  background-color: #2a611e;
+  border: none;
+  cursor: pointer;
+  color:#a9abaa;
+}
