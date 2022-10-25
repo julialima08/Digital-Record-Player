@@ -1,24 +1,31 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import PlaylistCard from '../Components/PlaylistCard'
 
 const PlaylistDetails = () => {
   const [playlist, setPlaylist] = useState([])
+
   let { id } = useParams()
   const getPlaylistDetails = async () => {
     let response = await axios.get(`http://localhost:3001/playlists/${id}`)
     setPlaylist(response.data)
-    console.log(response.data)
   }
 
   useEffect(() => {
     getPlaylistDetails()
   }, [])
 
+  let navigate = useNavigate()
+
+  const handleDelete = async () => {
+    await axios.delete(`http://localhost:3001/playlist/${id}`)
+    navigate('/playlists')
+  }
+
   return (
     <div>
-      <button>Delete Playlist</button>
+      <button onClick={handleDelete}>Delete Playlist</button>
       <button>Edit Playlist</button>
       <PlaylistCard
         key={playlist._id}

@@ -1,6 +1,12 @@
+import axios from 'axios'
+import { useParams } from 'react-router-dom'
 import SongCard from './SongCard'
 
 const PlaylistCard = (props) => {
+  let { id } = useParams
+  const removeSongFromPlaylist = async () => {
+    await axios.put(`http://localhost:3001/removeSong/${id}`)
+  }
   return (
     <div class="playlist-card" onClick={props.onClick}>
       <div class="playlist-img">
@@ -21,7 +27,9 @@ const PlaylistCard = (props) => {
                 genre={song.genre}
                 length={song.length}
               />
-              <button>Delete from playlist</button>
+              <button onClick={removeSongFromPlaylist}>
+                Delete from playlist
+              </button>
             </div>
           ))}
       </div>

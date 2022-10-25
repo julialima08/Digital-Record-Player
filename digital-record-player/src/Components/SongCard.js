@@ -1,5 +1,6 @@
+import AddSongToPlaylist from './AddSongToPlaylist'
+
 const SongCard = (props) => {
-  const addToPlaylist = () => {}
   return (
     <div class="song-card">
       <div class="song-img">
@@ -13,7 +14,7 @@ const SongCard = (props) => {
         <h4>{props.artist}</h4>
         <h5>{props.genre}</h5>
         <h5>{props.length}</h5>
-        <button>Add to Playlist</button>
+        <AddSongToPlaylist />
       </div>
     </div>
   )
