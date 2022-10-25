@@ -14,7 +14,7 @@ const SongCard = (props) => {
         <h4>{props.artist}</h4>
         <h5>{props.genre}</h5>
         <h5>{props.length}</h5>
-        <AddSongToPlaylist />
+        <AddSongToPlaylist song={props} />
       </div>
     </div>
   )

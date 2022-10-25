@@ -19,10 +19,9 @@ const AddSongToPlaylist = (props) => {
     getPlaylists()
   }
 
-  let { id } = useParams()
   const addSongToPlaylist = async (playlist) => {
     let response = await axios.put(
-      `http://localhost:3001/addSong/${playlist}`,
+      `http://localhost:3001/addSong/${playlist._id}`,
       song
     )
     setPlaylists(response)
@@ -30,19 +29,20 @@ const AddSongToPlaylist = (props) => {
 
   let navigate = useNavigate()
 
-  const handleSubmit = async (e, playlist, banana) => {
-    await addSongToPlaylist(e, banana)
+  const handleSubmit = async (playlist) => {
+    await addSongToPlaylist(playlist)
     navigate(`/playlist/${playlist._id}`)
   }
 
-  const handleClick = (song) => {
+  const handleClick = () => {
     togglePopUp()
-    setSong(song)
+    setSong(props.song)
+    console.log(props.song)
   }
 
   return (
     <>
-      <button onClick={() => handleClick(song)} className="btn-popUp">
+      <button onClick={handleClick} className="btn-popUp">
         Add to playlist
       </button>
 
@@ -63,7 +63,7 @@ const AddSongToPlaylist = (props) => {
                   numOfSongs={playlist.numOfSongs}
                   length={playlist.length}
                 />
-                <button onClick={() => handleSubmit(playlist, playlist._id)}>
+                <button onClick={() => handleSubmit(playlist)}>
                   add to playlist
                 </button>
               </div>

@@ -21,6 +21,7 @@ const Songs = () => {
         {songs.map((song) => (
           <SongCard
             key={song._id}
+            id={song._id}
             title={song.title}
             artist={song.artist}
             genre={song.genre}

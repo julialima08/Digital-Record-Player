@@ -1,12 +1,23 @@
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import SongCard from './SongCard'
+import { useEffect } from 'react'
 
 const PlaylistCard = (props) => {
   let { id } = useParams
   const removeSongFromPlaylist = async () => {
     await axios.put(`http://localhost:3001/removeSong/${id}`)
   }
+
+  const getPlaylistDetails = async () => {
+    let response = await axios.get(`http://localhost:3001/playlists/${id}`)
+    props.setPlaylist(response.data)
+  }
+
+  useEffect(() => {
+    getPlaylistDetails()
+  }, [])
+
   return (
     <div class="playlist-card" onClick={props.onClick}>
       <div class="playlist-img">

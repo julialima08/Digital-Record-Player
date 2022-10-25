@@ -98,10 +98,10 @@ const addSongToPlaylist = async (req, res) => {
     const { playlistId } = req.params
     const playlist = await Playlist.findById(playlistId)
     const song = req.body
-
+    console.log(req.body)
     playlist.numOfSongs += 1
     playlist.length += song.length
-    playlist.songs.push(song._id)
+    playlist.songs.push(song.id)
     playlist.save()
     if (playlist) {
       return res.status(200).send(playlist)
