@@ -5,7 +5,6 @@ import Header from './Components/Header'
 import Home from './Pages/Home'
 import Songs from './Pages/Songs'
 import Playlists from './Pages/Playlists'
-import AddSongs from './Pages/AddSongs'
 import PlaylistDetails from './Pages/PlaylistDetails'
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/songs" element={<Songs />} />
           <Route path="/playlists" element={<Playlists />} />
-          <Route path="/addsongs" element={<AddSongs />} />
           <Route path="/playlist/:id" element={<PlaylistDetails />} />
         </Routes>
       </main>

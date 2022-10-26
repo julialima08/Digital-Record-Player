@@ -20,26 +20,6 @@ const getSongDetails = async (req, res) => {
   }
 }
 
-const addSongs = async (req, res) => {
-  try {
-    const song = await new Song(req.body)
-    await song.save()
-    return res.status(200).json({ song })
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
-
-const getGenres = async (req, res) => {
-  try {
-    const { id } = req.params
-    const genre = await Song.find({ genre: id })
-    return res.status(200).json({ genre })
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
-
 const createPlaylist = async (req, res) => {
   try {
     const playlist = await new Playlist(req.body)
@@ -64,17 +44,6 @@ const getOnePlaylist = async (req, res) => {
     const { id } = req.params
     const playlist = await Playlist.findById(id).populate('songs')
     return res.status(200).json(playlist)
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
-
-const updatePlaylist = async (req, res) => {
-  try {
-    const playlist = await Playlist.findByIdAndUpdate(req.params.id, req.body, {
-      new: true
-    })
-    return res.status(200).json({ playlist })
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -149,12 +118,9 @@ const removeSongFromPlaylist = async (req, res) => {
 module.exports = {
   getAllSongs,
   getSongDetails,
-  addSongs,
-  getGenres,
   createPlaylist,
   getAllPlaylists,
   getOnePlaylist,
-  updatePlaylist,
   deletePlaylist,
   addSongToPlaylist,
   removeSongFromPlaylist

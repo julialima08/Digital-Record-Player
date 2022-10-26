@@ -13,9 +13,6 @@ const Nav = () => {
       <Link to="/playlists">
         <button>Playlists</button>
       </Link>
-      <Link to="/addsongs">
-        <button>Add Songs</button>
-      </Link>
     </div>
   )
 }

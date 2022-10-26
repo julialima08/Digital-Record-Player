@@ -23,7 +23,6 @@ const Songs = () => {
       .request(options)
       .then(function (response) {
         setSongs(response.data.data)
-        console.log(response.data.data)
       })
       .catch(function (error) {
         console.error(error)

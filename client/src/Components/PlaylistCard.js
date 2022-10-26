@@ -18,7 +18,6 @@ const PlaylistCard = (props) => {
         <h5>{props.numOfSongs} Songs</h5>
         <h5>{props.length} mins</h5>
         <button onClick={handleDelete}>Delete Playlist</button>
-        <button>Edit Playlist</button>
       </div>
     </div>
   )
