@@ -1,3 +1,5 @@
+import '../CSS/header.css'
+
 const Title = (props) => {
   return (
     <div>

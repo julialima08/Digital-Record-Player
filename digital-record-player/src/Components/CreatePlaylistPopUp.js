@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import '../CSS/popUp.css'
-import { useNavigate } from 'react-router-dom'
 
 const CreatePlaylistPopUp = (props) => {
   const [popUp, setPopUp] = useState(false)
@@ -15,11 +14,9 @@ const CreatePlaylistPopUp = (props) => {
     document.body.classList.remove('active-popUp')
   }
 
-  let navigate = useNavigate()
-
   const handleSumbit = async (e) => {
     await props.addPlaylist(e)
-    navigate('/playlists')
+    togglePopUp()
   }
 
   const newPlaylist = props.newPlaylist

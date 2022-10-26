@@ -94,21 +94,36 @@ const deletePlaylist = async (req, res) => {
 }
 
 const addSongToPlaylist = async (req, res) => {
+  console.log(req.body)
   try {
     const { playlistId } = req.params
     const playlist = await Playlist.findById(playlistId)
-    const song = req.body
-
+    let songArray = await Song.find({
+      title: req.body.title,
+      artist: req.body.artist
+    })
+    let song
+    if (songArray.length > 0) {
+      song = songArray[0]
+    } else {
+      song = await new Song(req.body)
+      await song.save()
+    }
     playlist.numOfSongs += 1
-    playlist.length += song.length
-    playlist.songs.push(song.id)
-    playlist.save()
+    if (!playlist.length) {
+      playlist.length = song.length
+    } else {
+      playlist.length += song.length
+    }
+
+    playlist.songs.push(song._id)
+    await playlist.save()
     if (playlist) {
       return res.status(200).send(playlist)
     }
     throw new Error('playlist not found')
   } catch (error) {
-    return res.status(500).send(error.message)
+    return res.status(500).send(error)
   }
 }
 
@@ -117,7 +132,7 @@ const removeSongFromPlaylist = async (req, res) => {
     const { playlistId } = req.params
     const playlist = await Playlist.findById(playlistId)
     const song = req.body
-    console.log(req.body)
+
     playlist.numOfSongs -= 1
     playlist.length -= song.length
     playlist.songs.splice(song.index, 1)

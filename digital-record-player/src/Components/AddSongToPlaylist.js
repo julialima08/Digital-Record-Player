@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 import '../CSS/App.css'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import PlaylistCard from './PlaylistCard'
 
 const AddSongToPlaylist = (props) => {
   const [popUp, setPopUp] = useState(false)
   const [playlists, setPlaylists] = useState([])
-  const [song, setSong] = useState([])
+  const [song, setSong] = useState(null)
 
   const getPlaylists = async () => {
     let response = await axios.get('http://localhost:3001/playlists')
+
     setPlaylists(response.data.playlists)
   }
 
@@ -20,6 +21,7 @@ const AddSongToPlaylist = (props) => {
   }
 
   const addSongToPlaylist = async (playlist) => {
+    // console.log(playlist)
     let response = await axios.put(
       `http://localhost:3001/addSong/${playlist._id}`,
       song
@@ -37,7 +39,6 @@ const AddSongToPlaylist = (props) => {
   const handleClick = () => {
     togglePopUp()
     setSong(props.song)
-    console.log(props.song)
   }
 
   return (
@@ -58,6 +59,7 @@ const AddSongToPlaylist = (props) => {
               <div>
                 <PlaylistCard
                   key={playlist._id}
+                  id={playlist._id}
                   playlistName={playlist.playlistName}
                   creatorName={playlist.creatorName}
                   numOfSongs={playlist.numOfSongs}

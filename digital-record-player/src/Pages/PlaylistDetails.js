@@ -1,13 +1,12 @@
 import { useState } from 'react'
-import PlaylistCard from '../Components/PlaylistCard'
+import PlaylistDetailsCard from '../Components/PlaylistDetailsCard'
 
 const PlaylistDetails = () => {
   const [playlist, setPlaylist] = useState([])
 
   return (
     <div>
-      <PlaylistCard
-        key={playlist._id}
+      <PlaylistDetailsCard
         playlistName={playlist.playlistName}
         creatorName={playlist.creatorName}
         numOfSongs={playlist.numOfSongs}

@@ -5,8 +5,8 @@ const playlistSchema = new Schema(
   {
     creatorName: { type: String, required: true },
     playlistName: { type: String, reqired: true },
-    numOfSongs: { type: Number, required: true },
-    length: { type: Number, required: true },
+    numOfSongs: { type: Number },
+    length: { type: Number },
     songs: [{ type: Schema.Types.ObjectId, ref: 'Song' }]
   },
   { timestamps: true }

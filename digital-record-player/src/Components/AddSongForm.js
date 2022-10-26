@@ -28,13 +28,6 @@ const AddSongForm = (props) => {
           name="artist"
         />
         <input
-          type="text"
-          value={newSong.genre}
-          onChange={props.handleChange}
-          placeholder={'genre'}
-          name="genre"
-        />
-        <input
           type="number"
           value={newSong.length}
           onChange={props.handleChange}

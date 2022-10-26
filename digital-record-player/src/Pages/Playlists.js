@@ -29,12 +29,23 @@ const Playlists = () => {
   })
 
   const addPlaylist = async (e) => {
-    // e.preventDefault()
+    e.preventDefault()
     let response = await axios.post(
       'http://localhost:3001/playlists',
       newPlaylist
     )
-    setNewPlaylist(response)
+
+    let tempList = [...playlists]
+
+    tempList.push(response.data.playlist)
+    setPlaylists(tempList)
+
+    setNewPlaylist({
+      playlistName: '',
+      creatorName: '',
+      numOfSongs: 0,
+      length: 0
+    })
   }
 
   const handleChange = (e) => {

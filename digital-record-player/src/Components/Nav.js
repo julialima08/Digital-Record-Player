@@ -7,9 +7,6 @@ const Nav = () => {
       <Link to="/">
         <button>Home</button>
       </Link>
-      <Link to="/genres">
-        <button>Genres</button>
-      </Link>
       <Link to="/songs">
         <button>Songs</button>
       </Link>

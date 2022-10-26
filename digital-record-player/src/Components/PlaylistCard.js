@@ -1,27 +1,11 @@
 import axios from 'axios'
-import { useParams, useNavigate } from 'react-router-dom'
-import SongCard from './SongCard'
-import { useEffect, useState } from 'react'
-import RemoveSongFromPlaylist from './RemoveSongFromPlaylist'
+import { useNavigate } from 'react-router-dom'
 
 const PlaylistCard = (props) => {
-  const [song, setSong] = useState()
-  const [playlists, setPlaylists] = useState()
-  let { id } = useParams()
-
-  const getPlaylistDetails = async () => {
-    let response = await axios.get(`http://localhost:3001/playlists/${id}`)
-    props.setPlaylist(response.data)
-  }
-
-  useEffect(() => {
-    getPlaylistDetails()
-  }, [])
-
   let navigate = useNavigate()
 
   const handleDelete = async () => {
-    await axios.delete(`http://localhost:3001/playlist/${id}`)
+    await axios.delete(`http://localhost:3001/playlist/${props.id}`)
     navigate('/playlists')
   }
 
@@ -35,20 +19,6 @@ const PlaylistCard = (props) => {
         <h5>{props.length} mins</h5>
         <button onClick={handleDelete}>Delete Playlist</button>
         <button>Edit Playlist</button>
-        {props.songs &&
-          props.songs.map((song) => (
-            <div>
-              <SongCard
-                key={song._id}
-                id={song._id}
-                title={song.title}
-                artist={song.artist}
-                genre={song.genre}
-                length={song.length}
-              />
-              <RemoveSongFromPlaylist song={props} />
-            </div>
-          ))}
       </div>
     </div>
   )

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
 .nav {
   display: flex;
   justify-content: space-around;
@@ -8,8 +10,10 @@
 }
 
 .nav button {
-  background-color: #2a611e;
+  background-color: #2a611e;;
   border: none;
   cursor: pointer;
-  color:#a9abaa;
+  color:#d4c4b2;
+  font-family: 'Playfair Display', serif;
+
 }

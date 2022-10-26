@@ -1,32 +1,18 @@
 import axios from 'axios'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 
 const RemoveSongFromPlaylist = (props) => {
-  const [playlists, setPlaylists] = useState([])
-  const [song, setSong] = useState([])
-
-  const removeSongFromPlaylist = async (playlist) => {
-    setSong(props.song)
-
+  const removeSong = async () => {
+    let song = { ...props.song, index: props.index }
     let response = await axios.put(
-      `http://localhost:3001/removeSong/${playlist._id}`,
+      `http://localhost:3001/removeSong/${props.id}`,
       song
     )
-    setPlaylists(response)
-    // console.log(response)
-  }
-
-  // let navigate = useNavigate()
-
-  const handleSubmit = async (playlist) => {
-    await removeSongFromPlaylist(playlist)
-    // navigate(`/playlist/${playlist._id}`)
+    props.setPlaylist(response.data)
   }
 
   return (
     <div>
-      <button onClick={handleSubmit}>Delete from playlist</button>
+      <button onClick={removeSong}>Delete from playlist</button>
     </div>
   )
 }
