@@ -130,7 +130,7 @@ const addSongToPlaylist = async (req, res) => {
 const removeSongFromPlaylist = async (req, res) => {
   try {
     const { playlistId } = req.params
-    const playlist = await Playlist.findById(playlistId)
+    const playlist = await Playlist.findById(playlistId).populate('songs')
     const song = req.body
 
     playlist.numOfSongs -= 1

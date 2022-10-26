@@ -34,7 +34,7 @@ const PlaylistDetailsCard = (props) => {
         <button>Edit Playlist</button>
 
         {props.songs?.map((song, index) => (
-          <div key={song._id}>
+          <div key={index}>
             <SongCard
               id={song._id}
               title={song.title}

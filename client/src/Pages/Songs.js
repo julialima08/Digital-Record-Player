@@ -6,17 +6,14 @@ import '../CSS/songpage.css'
 const Songs = () => {
   const [songs, setSongs] = useState([])
 
-  // const getSongs = async () => {
-  //   let response = await axios.get('http://localhost:3001/allSongs')
-  //   setSongs(response.data.songs)
-  // }
+  let API_KEY = process.env.REACT_APP_RAPID_API_KEY
 
   const options = {
     method: 'GET',
     url: 'https://deezerdevs-deezer.p.rapidapi.com/search',
     params: { q: 'songs' },
     headers: {
-      'X-RapidAPI-Key': '7d3489c981mshd8b003a4a76fc64p1d5f38jsn5939fc8db612',
+      'X-RapidAPI-Key': `${API_KEY}`,
       'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
     }
   }
