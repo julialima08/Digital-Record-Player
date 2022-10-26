@@ -10,9 +10,8 @@ const SongCard = (props) => {
         </div>
         <div className="song-info">
           <h3>{props.title}</h3>
-          <h4>{props.artist}</h4>
-          <h4>{props.releaseDate}</h4>
-          <h4>{props.length}</h4>
+          <h4>By: {props.artist}</h4>
+          <h4>{props.length} secs</h4>
           <AddSongToPlaylist song={props} />
         </div>
       </div>

@@ -21,7 +21,6 @@ const AddSongToPlaylist = (props) => {
   }
 
   const addSongToPlaylist = async (playlist) => {
-    // console.log(playlist)
     let response = await axios.put(
       `http://localhost:3001/addSong/${playlist._id}`,
       song
