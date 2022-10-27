@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
 
+body {
+  margin: 0;
+  /* display: flex;
+  justify-content: center; */
+}
 .songs {
   font-size: 70x;
   font-family: 'Playfair Display';
@@ -7,14 +12,38 @@
 
 .song-card {
   background-color: #2a611e;
-  width: 200px;
+  width: 450px;
+  display: flex;
+  height: 100px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
 }
 
 .card-holder {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
   font-family: 'Playfair Display';
-  color:#d4c4b2
+  color:#d4c4b2;
+  margin: 0;
+}
+
+.song-info h3 {
+  font-size: 20px;
+}
+
+.song-info h4 {
+  font-size: 12px;
+}
+
+.container-grid {
+  padding: 2em ;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 450px);
+  grid-gap: 2em;
+  justify-content: center;
+}
+
+.song-img img {
+  height: 70px;
+  width: 70px;
+  margin: 0;
 }

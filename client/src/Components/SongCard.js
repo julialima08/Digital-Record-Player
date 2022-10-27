@@ -1,5 +1,6 @@
 import AddSongToPlaylist from './AddSongToPlaylist'
 import '../CSS/songpage.css'
+import '../CSS/popUp.css'
 
 const SongCard = (props) => {
   return (
@@ -12,6 +13,8 @@ const SongCard = (props) => {
           <h3>{props.title}</h3>
           <h4>By: {props.artist}</h4>
           <h4>{props.length} secs</h4>
+        </div>
+        <div>
           <AddSongToPlaylist song={props} />
         </div>
       </div>
