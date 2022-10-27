@@ -28,7 +28,6 @@ const Songs = () => {
       .request(startSongs)
       .then(function (response) {
         setSongs(response.data.data)
-        console.log(response.data.data)
       })
       .catch(function (error) {
         console.error(error)
@@ -86,6 +85,7 @@ const Songs = () => {
               image={song.album.cover_medium}
               artist={song.artist.name}
               length={song.duration}
+              preview={song.preview}
             />
           ))}
         </section>
@@ -99,6 +99,7 @@ const Songs = () => {
             image={song.album.cover_medium}
             artist={song.artist.name}
             length={song.duration}
+            preview={song.preview}
           />
         ))}
       </div>

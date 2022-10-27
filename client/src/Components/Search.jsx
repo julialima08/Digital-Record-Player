@@ -1,3 +1,5 @@
+import '../CSS/search.css'
+
 const Search = (props) => {
 
   return (
@@ -7,9 +9,9 @@ const Search = (props) => {
         name="search"
         value={props.value}
         placeholder="Search Songs/Artists"
-        onChange={props.onChange}> 
-      </input>
-      <button type='submit'>Search</button>
+        onChange={props.onChange}
+        className="search" /> 
+      <button type='submit' className="search-button">Search</button>
     </form>
   )
 }
