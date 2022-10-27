@@ -1,3 +1,29 @@
 .search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.search-bar {
+  background-color:#d4c4b2; 
+  border-radius: 25px;
+  height: 30px;
+  opacity: .8;
+  border: none;
   width: 50vw;
 }
+
+
+.search-button {
+  background-color: #c44c21;
+  color:#d4c4b2;
+  border: none;
+  border-radius: 25px;
+  height: 30px;
+}
+
+form {
+  display: flex;
+  
+}
+

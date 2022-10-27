@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import SongCard from './SongCard'
 import { useEffect } from 'react'
 import RemoveSongFromPlaylist from './RemoveSongFromPlaylist'
+import '../CSS/songpage.css'
 
 const PlaylistDetailsCard = (props) => {
   let { id } = useParams()
@@ -47,6 +48,7 @@ const PlaylistDetailsCard = (props) => {
               image={song.image}
               artist={song.artist}
               length={song.length}
+              preview={song.preview}
             />
             <RemoveSongFromPlaylist
               song={props}

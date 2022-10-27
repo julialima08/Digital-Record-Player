@@ -75,7 +75,9 @@ const Songs = () => {
           onChange={handleChange}
           value={searchQuery}
         />
-        {searched ? <h2>Search Results</h2> : <></>}
+      </div>
+      {searched ? <h2>Search Results</h2> : <></>}
+      <div className="song-display">
         <section className="search-results container-grid">
           {searchResults.map((song) => (
             <SongCard
@@ -90,18 +92,20 @@ const Songs = () => {
           ))}
         </section>
       </div>
-      <div className="search-results container-grid">
-        {songs?.map((song) => (
-          <SongCard
-            id={song.id}
-            key={song.id}
-            title={song.title_short}
-            image={song.album.cover_medium}
-            artist={song.artist.name}
-            length={song.duration}
-            preview={song.preview}
-          />
-        ))}
+      <div className="song-display">
+        <div className="search-results container-grid">
+          {songs?.map((song) => (
+            <SongCard
+              id={song.id}
+              key={song.id}
+              title={song.title_short}
+              image={song.album.cover_medium}
+              artist={song.artist.name}
+              length={song.duration}
+              preview={song.preview}
+            />
+          ))}
+        </div>
       </div>
     </div>
   )

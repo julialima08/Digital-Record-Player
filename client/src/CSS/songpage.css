@@ -2,8 +2,7 @@
 
 body {
   margin: 0;
-  /* display: flex;
-  justify-content: center; */
+  
 }
 .songs {
   font-size: 70x;
@@ -11,43 +10,53 @@ body {
 }
 
 .song-card {
-  background-color: #2a611e;
-  width: 450px;
+  background-color: #d4c4b2;
+  width: 550px;
   display: flex;
-  height: 100px;
+  height: 150px;
   justify-content: space-around;
   align-items: center;
   padding: 10px;
+  border-radius: 25px;
+ 
 }
 
 .card-holder {
   font-family: 'Playfair Display';
-  color:#d4c4b2;
+  color:#2a611e;
   margin: 0;
+  width: 100%;
 }
 
 .song-info h3 {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .song-info h4 {
-  font-size: 12px;
+  font-size: 15px;
 }
 
+.song-display {
+  display: flex;
+  justify-content: center;
+}
 .container-grid {
-  padding: 2em ;
+  padding: 30px ;
   display: grid;
   grid-template-columns: repeat(auto-fill, 450px);
-  grid-gap: 2em;
+  column-gap: 8em;
+  row-gap: 2em;
   justify-content: center;
 }
 
 .song-img img {
-  height: 70px;
-  width: 70px;
+  height: 125px;
+  width: 125px;
   margin: 0;
   border-radius: 50%;
-  position: relative;
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
 }
 
 @keyframes spinning {
@@ -61,26 +70,66 @@ body {
     animation-timing-function: linear;
   }
 
-
-  .pause {
-    width: 30px;
-    height: 30px;
+  .container {
+    position: relative;
+    height: 125px;
+    width: 125px;
+    margin: 0;
+    border-radius: 50%;
   }
 
+  .container:hover .song-img{
+    opacity: 0.5;
+  }
 
-  .song-img:hover .play {
-    opacity: .5;
+  .container:hover .play {
+    opacity: 1;
+  }
+
+  .container:hover .pause {
+    opacity: 1;
   }
 
   .play {
-    position: absolute;
-    top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     opacity: 0;
-    transition: .3s ease;
+    position: absolute;
+    top: 33%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .play-inactive {
+    visibility: hidden;
+  }
+
+  .pause {
+    width: 45px;
+    height: 45px;
+    opacity: 0;
+    position: absolute;
+    top: 33%;
+    left: 44%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .pause-inactive {
+    visibility: hidden;
+  }
+
+  .center {
+    width: 45px;
+    height: 45px;
+    opacity: 1;
+    position: absolute;
+    top: 33%;
+    left: 44%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
   }

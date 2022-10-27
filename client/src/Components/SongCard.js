@@ -30,11 +30,18 @@ const SongCard = (props) => {
             />
           </div>
           <img
-            className="play"
+            className="center"
+            src="https://ucarecdn.com/a8951e3e-8cef-4c2a-86f9-b87d34bc82d0/"
+          />
+
+          <img
+            className={!isPlaying ? 'play' : 'play-inactive'}
+            onClick={toggleAudio}
             src="https://ucarecdn.com/f2825d68-d25e-4bbb-a47c-fc0b73cb238b/"
           />
           <img
-            className="pause"
+            className={isPlaying ? 'pause' : 'pause-inactive'}
+            onClick={toggleAudio}
             src="https://ucarecdn.com/33371ab3-7a92-435f-b8e8-cf419e5c0f9c/"
           />
         </div>
