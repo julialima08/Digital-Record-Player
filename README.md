@@ -12,7 +12,7 @@
 
 ### **_Description_**
 
-#### Digital Record Player is a music player that allows you to add songs to your playlist, see playlists other people created, and even add your own songs if they aren't on the song list already. What makes this app different from the rest is not only the ability to add your own songs, but also the illusion of listening to a record that gives users the nostalgic feeling they don't get from other music streaming platforms.
+#### Digital Record Player is a music player that allows you to add songs to your playlist and see playlists other people created. What makes this app different from the rest is the illusion of listening to a record that gives users the nostalgic feeling they don't get from other music streaming platforms.
 
 ---
 
