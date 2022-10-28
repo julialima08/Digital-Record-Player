@@ -25,11 +25,14 @@ body.active-popUp {
   right: 0;
   bottom: 0;
   position: fixed;
+  z-index: 1;
 }
 
 .overlay {
   background: rgba(49,49,49,0.8);
+
 }
+
 .popUp-content {
   position: absolute;
   top: 50%;
@@ -41,8 +44,8 @@ body.active-popUp {
   width: 600px;
   max-height: 80vh;
   background-color: #c3a588;
-  position: fixed;
   overflow: auto;
+  z-index: 2;
 }
 
 .close-popUp {

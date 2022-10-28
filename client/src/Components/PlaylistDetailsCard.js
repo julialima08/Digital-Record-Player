@@ -54,7 +54,8 @@ const PlaylistDetailsCard = (props) => {
                 preview={song.preview}
               />
               <RemoveSongFromPlaylist
-                song={props}
+                song={song}
+                index={index}
                 id={id}
                 setPlaylist={props.setPlaylist}
               />

@@ -16,7 +16,7 @@ const Songs = () => {
   const startSongs = {
     method: 'GET',
     url: 'https://deezerdevs-deezer.p.rapidapi.com/search',
-    params: { q: 'songs' },
+    params: { q: 'still woozy' },
     headers: {
       'X-RapidAPI-Key': `${API_KEY}`,
       'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'

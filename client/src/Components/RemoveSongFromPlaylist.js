@@ -4,6 +4,7 @@ import '../CSS/playlistDetails.css'
 const RemoveSongFromPlaylist = (props) => {
   const removeSong = async () => {
     let song = { ...props.song, index: props.index }
+    console.log(song)
     let response = await axios.put(
       `http://localhost:3001/removeSong/${props.id}`,
       song
