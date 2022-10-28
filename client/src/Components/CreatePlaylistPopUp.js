@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../CSS/popUp.css'
+import '../CSS/playlist.css'
 
 const CreatePlaylistPopUp = (props) => {
   const [popUp, setPopUp] = useState(false)
@@ -36,6 +37,7 @@ const CreatePlaylistPopUp = (props) => {
             </button>
             <form onSubmit={handleSumbit}>
               <input
+                className="input"
                 type="text"
                 value={newPlaylist.playlistName}
                 onChange={props.handleChange}
@@ -43,6 +45,7 @@ const CreatePlaylistPopUp = (props) => {
                 name="playlistName"
               />
               <input
+                className="input"
                 type="text"
                 value={newPlaylist.creatorName}
                 onChange={props.handleChange}
@@ -50,7 +53,7 @@ const CreatePlaylistPopUp = (props) => {
                 name="creatorName"
               />
 
-              <button>Submit</button>
+              <button className="submit">Submit</button>
             </form>
           </div>
         </div>

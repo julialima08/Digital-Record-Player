@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../CSS/App.css'
+// import '../CSS/popUp.css'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import PlaylistCard from './PlaylistCard'
@@ -40,6 +41,12 @@ const AddSongToPlaylist = (props) => {
     setSong(props.song)
   }
 
+  if (popUp) {
+    document.body.classList.add('active-popUp')
+  } else {
+    document.body.classList.remove('active-popUp')
+  }
+
   return (
     <>
       <button onClick={handleClick} className="btn-popUp">
@@ -56,17 +63,24 @@ const AddSongToPlaylist = (props) => {
 
             {playlists.map((playlist) => (
               <div>
-                <PlaylistCard
-                  key={playlist._id}
-                  id={playlist._id}
-                  playlistName={playlist.playlistName}
-                  creatorName={playlist.creatorName}
-                  numOfSongs={playlist.numOfSongs}
-                  length={playlist.length}
-                />
-                <button onClick={() => handleSubmit(playlist)}>
-                  add to playlist
-                </button>
+                <div>
+                  <PlaylistCard
+                    key={playlist._id}
+                    id={playlist._id}
+                    playlistName={playlist.playlistName}
+                    creatorName={playlist.creatorName}
+                    numOfSongs={playlist.numOfSongs}
+                    length={playlist.length}
+                  />
+                </div>
+                <div>
+                  <button
+                    className="add"
+                    onClick={() => handleSubmit(playlist)}
+                  >
+                    add to playlist
+                  </button>
+                </div>
               </div>
             ))}
           </div>

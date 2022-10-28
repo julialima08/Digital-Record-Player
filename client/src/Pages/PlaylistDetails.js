@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import PlaylistDetailsCard from '../Components/PlaylistDetailsCard'
+import '../CSS/playlistDetails.css'
 
 const PlaylistDetails = () => {
   const [playlist, setPlaylist] = useState([])

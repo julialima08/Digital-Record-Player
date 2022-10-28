@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import CreatePlaylistPopUp from '../Components/CreatePlaylistPopUp'
+import '../CSS/playlist.css'
 
 const Playlists = () => {
   const [playlists, setPlaylists] = useState([])
@@ -54,13 +55,16 @@ const Playlists = () => {
 
   return (
     <div>
-      <h1>Playlists</h1>
-      <CreatePlaylistPopUp
-        newPlaylist={newPlaylist}
-        handleChange={handleChange}
-        addPlaylist={addPlaylist}
-      />
-      <div>
+      <h2>Playlists</h2>
+      <div className="create-playlist">
+        <CreatePlaylistPopUp
+          newPlaylist={newPlaylist}
+          handleChange={handleChange}
+          addPlaylist={addPlaylist}
+        />
+      </div>
+
+      <div className="playlist-card-container">
         {playlists.map((playlist) => (
           <PlaylistCard
             key={playlist._id}

@@ -1,18 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
-
-body {
-  margin: 0;
+.body {
+  margin-top: 30px;
+  display: flex;
+  align-content: center;
+  justify-content:center;
 }
-.songs {
-  font-size: 70x;
-  font-family: 'Playfair Display';
+
+.delete {
+  background-color: #c44c21;
+  color:#d4c4b2;
+  border: none;
+  border-radius: 25px;
+}
+
+.remove {
+  background-color: #c44c21;
+  color:#d4c4b2;
+  border: none;
+  border-radius: 25px;
+  width: 200px;
+}
+
+.playlist-card {
+  height: 290px;
+  width: 700px;
+  background-color: #d4c4b2;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
 }
 
 .song-card {
   background-color: #d4c4b2;
   width: 550px;
   display: flex;
-  height: 170px;
+  height: 150px;
   justify-content: space-around;
   align-items: center;
   padding: 10px;
@@ -23,9 +44,8 @@ body {
 .card-holder {
   font-family: 'Playfair Display';
   color:#2a611e;
-  margin: 0;
+  margin-top: 80px;
   width: 100%;
-  display: flex;
 }
 
 .song-info h3 {
@@ -40,9 +60,9 @@ body {
   padding: 30px ;
   display: grid;
   grid-template-columns: repeat(auto-fill, 450px);
-  column-gap: 8em;
-  row-gap: 2em;
-  justify-content: center;
+  column-gap: 7em;
+  row-gap: 1em;
+  align-items: center;
 }
 
 .song-img img {

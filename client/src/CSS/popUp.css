@@ -1,5 +1,5 @@
 body.active-popUp {
-  overflow-y:scroll;
+  overflow-y:hidden;
 }
 
 .btn-popUp {
@@ -36,13 +36,13 @@ body.active-popUp {
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: 1.4;
-  background: #f1f1f1;
   padding: 44px 88px;
   border-radius: 3px;
-  max-width: 600px;
-  min-width: 300px;
-  background-color: #d4c4b2;
+  width: 600px;
+  max-height: 80vh;
+  background-color: #c3a588;
   position: fixed;
+  overflow: auto;
 }
 
 .close-popUp {
@@ -54,4 +54,28 @@ body.active-popUp {
   color:#d4c4b2;
   border: none;
   border-radius: 25px;
+}
+
+
+.input {
+  background-color: #d4c4b2; 
+  border-radius: 25px;
+  height: 30px;
+  opacity: .8;
+  border: none;
+  width: 50vw;
+}
+
+
+.submit {
+  background-color: #c44c21;
+  color:#d4c4b2;
+  border: none;
+  border-radius: 25px;
+  height: 30px;
+}
+
+form {
+  display: flex;
+  
 }

@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import '../CSS/playlist.css'
 
 const PlaylistCard = (props) => {
   let navigate = useNavigate()
@@ -10,7 +11,7 @@ const PlaylistCard = (props) => {
   }
 
   return (
-    <div className="playlist-card" onClick={props.onClick}>
+    <div className="playlist" onClick={props.onClick}>
       <div className="playlist-img">
         <img
           src="https://ucarecdn.com/36899aae-483e-4673-8760-c07728e15f04/"
@@ -22,7 +23,9 @@ const PlaylistCard = (props) => {
         <h4>Created by: {props.creatorName}</h4>
         <h5>{props.numOfSongs} Songs</h5>
         <h5>{props.length} secs</h5>
-        <button onClick={handleDelete}>Delete Playlist</button>
+        <button className="delete" onClick={handleDelete}>
+          Delete Playlist
+        </button>
       </div>
     </div>
   )

@@ -1,4 +1,5 @@
 import axios from 'axios'
+import '../CSS/playlistDetails.css'
 
 const RemoveSongFromPlaylist = (props) => {
   const removeSong = async () => {
@@ -12,7 +13,9 @@ const RemoveSongFromPlaylist = (props) => {
 
   return (
     <div>
-      <button onClick={removeSong}>Delete from playlist</button>
+      <button className="remove" onClick={removeSong}>
+        Delete from playlist
+      </button>
     </div>
   )
 }

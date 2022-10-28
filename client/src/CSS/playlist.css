@@ -1,0 +1,52 @@
+.delete {
+  background-color: #c44c21;
+  color:#d4c4b2;
+  border: none;
+  border-radius: 25px;
+}
+
+.add {
+  background-color: #c44c21;
+  color:#d4c4b2;
+  border: none;
+  border-radius: 25px;
+}
+
+.playlist-card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+  background-color: #d4c4b2;
+  cursor: pointer;
+  border-radius: 25px;
+  margin: 10px;
+  padding: 20px;
+}
+
+.playlist-img {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 55px;
+  margin-top: 20px;
+  color: #2a611e
+}
+
+.create-playlist {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-popUp {
+  width: 110px;
+  height: 35px;
+  font-size: 13px;
+}
