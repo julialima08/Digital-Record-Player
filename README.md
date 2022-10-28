@@ -4,7 +4,7 @@
 
 ### By: Julia Lima
 
-#### [Github](https://github.com/julialima08) | [Linkedin](https://www.linkedin.com/in/julia-lima-279697249/) | [Trello](https://trello.com/invite/b/5XKISBjT/ATTI2f137c8622096e6cc1741a2056984628C2184104/digital-record-player) | [Official Cite](blah)
+#### [Github](https://github.com/julialima08) | [Linkedin](https://www.linkedin.com/in/julia-lima-279697249/) | [Trello](https://trello.com/invite/b/5XKISBjT/ATTI2f137c8622096e6cc1741a2056984628C2184104/digital-record-player) | [Official Cite](https://digital-record-player.herokuapp.com/)
 
 ---
 
@@ -31,11 +31,9 @@
 
 ### **_Getting Started_**
 
-##### Choose a genre to search songs by or simply go to the 'all songs' page to search for any song you would like to listen to.
+##### Simply go to the 'all songs' page to search for any song you would like to listen to.
 
 ##### click on the "add to playlist" button to add a song to your playlist or create a new one.
-
-##### The add songs page is where users can create a new song post if they can't find it in the database.
 
 ---
 
@@ -43,19 +41,19 @@
 
 #### All songs
 
-![Cat selfie](https://i.pinimg.com/originals/f0/05/59/f0055910c43df8dd38c9bdd51e6a875c.png)
+![songs page](https://ucarecdn.com/9ea4a571-2a11-46b9-a06a-8b1163002d76/)
 
 ---
 
 #### Playlists
 
-![Burrito cat](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FvXdkKTIzs9A%2Fmaxresdefault.jpg&f=1&nofb=1)
+![playlist page](https://ucarecdn.com/1ec24865-4071-4e30-bf89-8f88c5d55228/)
 
 ---
 
 ### **_Future Updates_**
 
-- [ ] Add audio
+- [x] Add audio
 - [ ] Allow sign in
 - [ ] Follow friends account
 - [ ] Show # of listeners
@@ -64,8 +62,6 @@
 
 ### **_Credits_**
 
-#### Songs API: [Song API](blah)
-
-#### Markdown Guide: [ia.net](https://ia.net/writer/support/general/markdown-guide)
+#### Songs API: [Song API](https://rapidapi.com/deezerdevs/api/deezer-1)
 
 ---

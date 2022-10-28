@@ -93,7 +93,7 @@ const Songs = () => {
         </section>
       </div>
       <div className="song-display">
-        <div className="search-results container-grid">
+        <div className="container-grid">
           {songs?.map((song) => (
             <SongCard
               id={song.id}
