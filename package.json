@@ -21,6 +21,7 @@
   "homepage": "https://github.com/julialima08/Digital-Record-Player#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^6.6.5",
     "morgan": "^1.10.0",
