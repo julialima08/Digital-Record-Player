@@ -11,6 +11,7 @@ const app = express()
 app.use(express.json())
 app.use(logger('dev'))
 app.use(cors())
+app.use(express.urlencoded({ extented: false }))
 app.use(express.static(`${__dirname}/client/build`))
 
 app.use('/', routes)
