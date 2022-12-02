@@ -9,7 +9,7 @@ const Playlists = () => {
   const [playlists, setPlaylists] = useState([])
 
   const getPlaylists = async () => {
-    let response = await axios.get('http://localhost:3001/playlists')
+    let response = await axios.get('/playlists')
     setPlaylists(response.data.playlists)
   }
 
@@ -32,7 +32,7 @@ const Playlists = () => {
   const addPlaylist = async (e) => {
     e.preventDefault()
     let response = await axios.post(
-      'http://localhost:3001/playlists',
+      '/playlists',
       newPlaylist
     )
 

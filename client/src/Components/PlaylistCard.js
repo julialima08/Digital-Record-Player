@@ -6,7 +6,7 @@ const PlaylistCard = (props) => {
   let navigate = useNavigate()
 
   const handleDelete = async () => {
-    await axios.delete(`http://localhost:3001/playlist/${props.id}`)
+    await axios.delete(`/playlist/${props.id}`)
     navigate('/playlists')
   }
 

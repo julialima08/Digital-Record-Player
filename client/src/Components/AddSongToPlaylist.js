@@ -11,7 +11,7 @@ const AddSongToPlaylist = (props) => {
   const [song, setSong] = useState(null)
 
   const getPlaylists = async () => {
-    let response = await axios.get('http://localhost:3001/playlists')
+    let response = await axios.get('/playlists')
 
     setPlaylists(response.data.playlists)
   }
@@ -23,7 +23,7 @@ const AddSongToPlaylist = (props) => {
 
   const addSongToPlaylist = async (playlist) => {
     let response = await axios.put(
-      `http://localhost:3001/addSong/${playlist._id}`,
+      `/addSong/${playlist._id}`,
       song
     )
     setPlaylists(response)

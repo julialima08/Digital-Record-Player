@@ -9,7 +9,7 @@ const PlaylistDetailsCard = (props) => {
   let { id } = useParams()
 
   const getPlaylistDetails = async () => {
-    let response = await axios.get(`http://localhost:3001/playlists/${id}`)
+    let response = await axios.get(`/playlists/${id}`)
     props.setPlaylist(response.data)
   }
 
@@ -20,7 +20,7 @@ const PlaylistDetailsCard = (props) => {
   let navigate = useNavigate()
 
   const handleDelete = async () => {
-    await axios.delete(`http://localhost:3001/playlist/${id}`)
+    await axios.delete(`/playlist/${id}`)
     navigate('/playlists')
   }
 
